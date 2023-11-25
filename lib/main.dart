@@ -12,12 +12,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          leading: Container(
-            width: 15, // Set the width to 20
-            height: 10, // Set the height to 20
-            child: Image.asset(
-              "data/logo-unja.png",
-            ),
+          leading: Image.asset(
+            "data/logo-unja.png",
           ),
           title: Text("UNJAnews"),
           backgroundColor: Colors.orange[200],

@@ -1,6 +1,6 @@
-# src
+# NewsAPP
 
-A new Flutter project.
+This project is made for the subject of Mobile Application Development
 
 ## Getting Started
 

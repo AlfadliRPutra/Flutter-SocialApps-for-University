@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
   final List<Widget> _children = [
     const HomeContent(),
     const SearchScreen(),
-    const ProfileScreen(),
+    ProfileScreen(),
   ];
 
   @override

@@ -4,6 +4,9 @@ import '/screens/profile_screen.dart';
 import '/screens/detail_screen.dart';
 import '/models/news.dart';
 import '/models/news_card.dart';
+import 'package:src/models/cuaca.dart';
+import 'dart:core';
+import '/models/display_cuaca.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
 
   final List<Widget> _children = [
-    const HomeContent(),
+    HomeContent(),
     const SearchScreen(),
     ProfileScreen(),
   ];
@@ -25,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Berita'),
+        title: const Text('UNJAtoday'),
       ),
       body: _children[_currentIndex],
       bottomNavigationBar: BottomNavigationBar(
@@ -59,14 +62,51 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class HomeContent extends StatelessWidget {
-  const HomeContent({Key? key}) : super(key: key);
+  // const HomeContent({Key? key}) : super(key: key);
+  DateTime now = DateTime.now();
+  late CuacaModel cuaca;
+  Future<CuacaModel> cuacaBuilder() async {
+    try {
+      // You can use Dart's core functionality to get the current date and time
+      cuaca = CuacaModel(
+        day: now.weekday,
+        date: "${now.day}/${now.month}/${now.year}",
+        description: "Your Description", // Replace with your description logic
+        time: "${now.hour}:${now.minute}",
+        icon: Icons.cloud, // Replace with your icon logic
+      );
+
+      return cuaca;
+    } catch (e) {
+      // If an error occurs
+      print('error $e');
+      throw Exception('Failed to load weather data');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: newsList.length,
+      itemCount: newsList.length + 1,
       itemBuilder: (context, index) {
-        final news = newsList[index];
+        if (index == 0) {
+          return FutureBuilder(
+            future: cuacaBuilder(),
+            builder: (context, snapshot) {
+              if (snapshot.connectionState == ConnectionState.waiting) {
+                return CircularProgressIndicator();
+              } else if (snapshot.hasError) {
+                return Text('Error: ${snapshot.error}');
+              } else if (snapshot.hasData) {
+                return DisplayCuaca(cuaca: cuaca);
+              } else {
+                return Text('No data available');
+              }
+            },
+          );
+        }
+
+        final news = newsList[index - 1];
         return NewsCard(
           news: news,
           onTap: () {

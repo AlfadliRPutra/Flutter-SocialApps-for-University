@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import '/screens/search_screen.dart';
 import '/screens/profile_screen.dart';
@@ -7,6 +9,7 @@ import '/models/news_card.dart';
 import 'package:src/models/cuaca.dart';
 import 'dart:core';
 import '/models/display_cuaca.dart';
+import 'package:http/http.dart' as http;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -67,13 +70,29 @@ class HomeContent extends StatelessWidget {
   late CuacaModel cuaca;
   Future<CuacaModel> cuacaBuilder() async {
     try {
+      // Uri.parse('https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=61e4e224e661060815a317029b134320')
+      final queryParameters = {
+        'q': 'jambi',
+        'appid': '61e4e224e661060815a317029b134320',
+        'units': 'metric',
+        'lang': 'id'
+      };
+      final uriCuaca = Uri.https(
+          'api.openweathermap.org', '/data/2.5/weather', queryParameters);
+
+      var response = await http.get(uriCuaca);
+      Map<String, dynamic> data =
+          jsonDecode(response.body) as Map<String, dynamic>;
+
       // You can use Dart's core functionality to get the current date and time
       cuaca = CuacaModel(
         day: now.weekday,
         date: "${now.day}/${now.month}/${now.year}",
-        description: "Your Description", // Replace with your description logic
+        description:
+            CuacaModel.capitalizeEveryWord(data['weather'][0]['description']),
         time: "${now.hour}:${now.minute}",
-        icon: Icons.cloud, // Replace with your icon logic
+        temp: data['main']['temp'].toDouble(),
+        icon: data['weather'][0]['icon'],
       );
 
       return cuaca;

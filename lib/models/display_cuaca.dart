@@ -15,7 +15,7 @@ class DisplayCuaca extends StatelessWidget {
       width: double.infinity,
       margin: EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: Colors.orange[900],
+        color: Color(0xFF9BCDD2),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -25,6 +25,10 @@ class DisplayCuaca extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(
+                'Jambi, Hari ini', // Tambahkan keterangan lokasi
+                style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
+              ),
               Text(
                 CuacaModel.getDayName(cuaca.day),
                 style: TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
@@ -42,7 +46,9 @@ class DisplayCuaca extends StatelessWidget {
                   Image.network(
                     'https://openweathermap.org/img/wn/${cuaca.icon}@2x.png',
                   ),
-                  Text(cuaca.temp.toString()),
+                  Text(
+                    '${cuaca.temp.toString()}°',
+                  ),
                   Text(
                     cuaca.description,
                     style: TextStyle(

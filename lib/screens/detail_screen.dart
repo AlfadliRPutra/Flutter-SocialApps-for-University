@@ -111,7 +111,7 @@ class DetailScreen extends StatelessWidget {
                       _formatDate(news.isoDate),
                       style: const TextStyle(
                         fontSize: 16,
-                        color: Colors.grey,
+                        color: Color.fromARGB(255, 0, 0, 0),
                       ),
                     ),
                     const SizedBox(width: 8),
@@ -119,7 +119,7 @@ class DetailScreen extends StatelessWidget {
                       _formatTime(news.isoDate),
                       style: const TextStyle(
                         fontSize: 16,
-                        color: Colors.grey,
+                        color: Color.fromARGB(255, 0, 0, 0),
                       ),
                     ),
                   ],

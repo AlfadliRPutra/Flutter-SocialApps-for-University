@@ -11,6 +11,7 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      color: Color.fromARGB(255, 255, 255, 255),
       child: InkWell(
         onTap: onTap,
         child: Row(
@@ -38,6 +39,7 @@ class NewsCard extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        color: Color.fromARGB(255, 0, 0, 0),
                       ),
                     ),
                     const SizedBox(
@@ -55,7 +57,7 @@ class NewsCard extends StatelessWidget {
                           _formatDate(news.isoDate),
                           style: const TextStyle(
                             fontSize: 12,
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                         const SizedBox(
@@ -65,7 +67,7 @@ class NewsCard extends StatelessWidget {
                           _formatTime(news.isoDate),
                           style: const TextStyle(
                             fontSize: 12,
-                            color: Colors.grey,
+                            color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
                       ],

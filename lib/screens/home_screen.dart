@@ -1,37 +1,20 @@
-import 'package:src/models/color_scheme.dart';
 import 'package:flutter/material.dart';
-import 'package:src/models/home_content.dart';
-import '/screens/search_screen.dart';
-import '/screens/profile_screen.dart';
-import 'dart:core';
+import 'package:get/get.dart';
+import 'package:src/controllers/home_controller.dart';
+import 'package:src/models/color_scheme.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({Key? key}) : super(key: key);
-
-  @override
-  _HomeScreenState createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
-  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-
-  final List<Widget> _children = [
-    HomeContent(),
-    const SearchScreen(),
-    ProfileScreen(),
-  ];
+class HomeScreen extends StatelessWidget {
+  final HomeController controller = Get.put(HomeController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        shape: ContinuousRectangleBorder(
+        shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
-            bottomLeft:
-                Radius.circular(20.0), // Atur border radius sesuai kebutuhan
-            bottomRight: Radius.circular(20.0),
+            bottomLeft: Radius.circular(15.0),
+            bottomRight: Radius.circular(15.0),
           ),
         ),
         actions: [
@@ -51,52 +34,36 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text(
           'UNJAtoday',
           style: TextStyle(
-            color: const Color.fromARGB(
-                255, 66, 66, 66), // Atur warna teks menjadi putih
-            fontFamily: 'Open Sans', fontWeight: FontWeight.bold,
+            color: const Color.fromARGB(255, 66, 66, 66),
+            fontFamily: 'Open Sans',
+            fontWeight: FontWeight.bold,
             fontSize: 20,
           ),
         ),
         centerTitle: true,
-        // Tambahkan ikon menu di sebelah kanan app bar
         leading: IconButton(
           icon: const Icon(
             Icons.menu,
             color: const Color.fromARGB(255, 66, 66, 66),
             semanticLabel: 'menu',
           ),
-          onPressed: () {
-            // Toggle the drawer visibility
-            if (_scaffoldKey.currentState?.isDrawerOpen == true) {
-              _scaffoldKey.currentState?.openEndDrawer();
-            } else {
-              _scaffoldKey.currentState?.openDrawer();
-            }
-          },
+          onPressed: () {},
         ),
       ),
-      body: _children[_currentIndex],
+      body: Obx(() => controller.pages[controller.currentIndex.value]),
       bottomNavigationBar: ConvexAppBar(
-        height: 46,
+        height: 50,
         items: [
           TabItem(icon: Icons.home, title: 'Beranda'),
           TabItem(icon: Icons.search, title: 'Cari'),
+          TabItem(icon: Icons.chat, title: 'Chat'),
           TabItem(icon: Icons.person, title: 'Profil'),
         ],
-        onTap: onTabTapped,
-        initialActiveIndex:
-            _currentIndex, // Jika Anda ingin menentukan indeks awal
-        backgroundColor: AppTheme
-            .primaryColor, // Ganti dengan warna latar belakang yang diinginkan
-        activeColor: Colors.white, // Ganti dengan warna ikon yang aktif
-        // Ganti dengan warna teks yang tidak aktif
+        onTap: controller.onTabTapped,
+        initialActiveIndex: controller.currentIndex.value,
+        backgroundColor: AppTheme.primaryColor,
+        activeColor: AppTheme.tertiaryColor,
       ),
     );
-  }
-
-  void onTabTapped(int index) {
-    setState(() {
-      _currentIndex = index;
-    });
   }
 }

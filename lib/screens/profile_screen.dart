@@ -1,10 +1,6 @@
-import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:src/controllers/user_profile_controller.dart';
-
-import '../models/user.dart'; // Replace with the correct path to your UserModel class
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 
 class ProfileScreen extends StatelessWidget {
   final ProfileController controller = Get.put(ProfileController());

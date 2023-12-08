@@ -11,6 +11,12 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
+      margin: EdgeInsets.only(
+        right: 10,
+        left: 10,
+        bottom: 5,
+        top: 0,
+      ),
       color: Color.fromARGB(255, 255, 255, 255),
       child: InkWell(
         onTap: onTap,
@@ -20,8 +26,8 @@ class NewsCard extends StatelessWidget {
             // Gambar di sebelah kiri
             Container(
               margin: const EdgeInsets.all(8.0),
-              width: 150,
-              height: 150,
+              width: 120,
+              height: 120,
               child: Image.network(
                 news.image['large'] ?? '',
                 fit: BoxFit.cover,
@@ -37,7 +43,7 @@ class NewsCard extends StatelessWidget {
                     Text(
                       news.title,
                       style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 14,
                         fontWeight: FontWeight.bold,
                         color: Color.fromARGB(255, 0, 0, 0),
                       ),
@@ -46,7 +52,7 @@ class NewsCard extends StatelessWidget {
                         height: 8), // Jarak antara judul dan ringkasan
                     Text(
                       news.contentSnippet,
-                      style: const TextStyle(fontSize: 14),
+                      style: const TextStyle(fontSize: 12),
                     ),
                     const SizedBox(
                         height: 8), // Jarak antara ringkasan dan tanggal
@@ -56,7 +62,7 @@ class NewsCard extends StatelessWidget {
                         Text(
                           _formatDate(news.isoDate),
                           style: const TextStyle(
-                            fontSize: 12,
+                            fontSize: 10,
                             color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),
@@ -66,7 +72,7 @@ class NewsCard extends StatelessWidget {
                         Text(
                           _formatTime(news.isoDate),
                           style: const TextStyle(
-                            fontSize: 12,
+                            fontSize: 10,
                             color: Color.fromARGB(255, 0, 0, 0),
                           ),
                         ),

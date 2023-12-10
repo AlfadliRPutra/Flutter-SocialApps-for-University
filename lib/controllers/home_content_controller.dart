@@ -1,11 +1,14 @@
 import 'dart:convert';
-
 import 'package:get/get.dart';
+import 'package:logging/logging.dart'; // Import the logging package
 import 'package:src/models/cuaca.dart';
 import 'package:http/http.dart' as http;
 
 class HomeContentController extends GetxController {
   final Rx<CuacaModel?> cuaca = Rx(null);
+
+  // Create a logger for the class
+  final Logger _logger = Logger('HomeContentController');
 
   @override
   void onInit() {
@@ -32,14 +35,17 @@ class HomeContentController extends GetxController {
 
       cuaca.value = CuacaModel(
         day: DateTime.now().weekday,
-        date: "${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}",
-        description: CuacaModel.capitalizeEveryWord(data['weather'][0]['description']),
+        date:
+            "${DateTime.now().day}/${DateTime.now().month}/${DateTime.now().year}",
+        description: CuacaModel.capitalizeEveryWord(
+            data['weather'][0]['description']),
         time: "${DateTime.now().hour}:${DateTime.now().minute}",
         temp: data['main']['temp'].toDouble(),
         icon: data['weather'][0]['icon'],
       );
-    } catch (e) {
-      print('Error fetching weather data: $e');
+    } catch (e, stackTrace) {
+      // Use the logger to log the error and stack trace
+      _logger.severe('Error fetching weather data', e, stackTrace);
     }
   }
 }

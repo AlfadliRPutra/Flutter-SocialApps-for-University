@@ -1,7 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:src/models/color_scheme.dart';
+
+class LoginController extends GetxController {
+  var email = ''.obs;
+  var password = ''.obs;
+
+  void setEmail(String value) {
+    email.value = value;
+  }
+
+  void setPassword(String value) {
+    password.value = value;
+  }
+
+  void login() {
+    if (email.value == 'admin@gmail.com' && password.value == 'admin') {
+      Get.snackbar('Login Success', 'Welcome!',
+          snackPosition: SnackPosition.BOTTOM);
+      Get.offNamed('/home');
+    } else {
+      Get.snackbar('Login Failed', 'Invalid email or password',
+          snackPosition: SnackPosition.BOTTOM);
+    }
+  }
+}
 
 class LoginScreen extends StatelessWidget {
+  final LoginController loginController = Get.put(LoginController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,7 +39,7 @@ class LoginScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            Get.back(); // Use GetX to navigate back
+            Get.back();
           },
           icon: Icon(
             Icons.arrow_back_ios,
@@ -53,8 +80,13 @@ class LoginScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
                       children: <Widget>[
-                        makeInput(label: "Email"),
-                        makeInput(label: "Password", obscureText: true),
+                        makeInput(
+                            label: "Email",
+                            onChanged: loginController.setEmail),
+                        makeInput(
+                            label: "Password",
+                            obscureText: true,
+                            onChanged: loginController.setPassword),
                       ],
                     ),
                   ),
@@ -74,8 +106,10 @@ class LoginScreen extends StatelessWidget {
                       child: MaterialButton(
                         minWidth: double.infinity,
                         height: 60,
-                        onPressed: () {},
-                        color: Colors.greenAccent,
+                        onPressed: () {
+                          loginController.login();
+                        },
+                        color: AppTheme.primaryColor,
                         elevation: 0,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(50),
@@ -93,10 +127,10 @@ class LoginScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text("Don't have an account?"),
+                      Text("Tidak memiliki akun? "),
                       GestureDetector(
                         onTap: () {
-                          Get.toNamed('/signup'); // Use GetX to navigate
+                          Get.toNamed('/signup');
                         },
                         child: Text(
                           "Sign up",
@@ -113,12 +147,7 @@ class LoginScreen extends StatelessWidget {
             ),
             Container(
               height: MediaQuery.of(context).size.height / 3,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('data/background.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
+              decoration: BoxDecoration(),
             )
           ],
         ),
@@ -126,7 +155,7 @@ class LoginScreen extends StatelessWidget {
     );
   }
 
-  Widget makeInput({label, obscureText = false}) {
+  Widget makeInput({label, obscureText = false, onChanged}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -143,6 +172,7 @@ class LoginScreen extends StatelessWidget {
         ),
         TextField(
           obscureText: obscureText,
+          onChanged: onChanged,
           decoration: InputDecoration(
             contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
             enabledBorder: OutlineInputBorder(

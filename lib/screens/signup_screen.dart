@@ -1,6 +1,11 @@
+// Import library Flutter dan GetX
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// Import skema warna kustom
+import 'package:src/models/color_scheme.dart';
+
+// Kelas untuk tampilan halaman pendaftaran (signup)
 class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -12,7 +17,7 @@ class SignupScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
-            Get.back(); // Use GetX to navigate back
+            Get.back(); // Menggunakan GetX untuk navigasi kembali
           },
           icon: Icon(
             Icons.arrow_back_ios,
@@ -66,13 +71,13 @@ class SignupScreen extends StatelessWidget {
                   minWidth: double.infinity,
                   height: 60,
                   onPressed: () {},
-                  color: Colors.greenAccent,
+                  color: AppTheme.primaryColor,
                   elevation: 0,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(50),
                   ),
                   child: Text(
-                    "login",
+                    "Sign up",
                     style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                   ),
                 ),
@@ -83,7 +88,7 @@ class SignupScreen extends StatelessWidget {
                   Text("Sudah memiliki akun?"),
                   GestureDetector(
                     onTap: () {
-                      Get.toNamed('/login'); 
+                      Get.toNamed('/login');
                     },
                     child: Text(
                       "Login",
@@ -102,6 +107,7 @@ class SignupScreen extends StatelessWidget {
     );
   }
 
+  // Metode untuk membuat input teks
   Widget makeInput({label, obscureText = false}) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

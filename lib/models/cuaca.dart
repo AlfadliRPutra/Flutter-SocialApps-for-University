@@ -1,6 +1,6 @@
-
-
+// Import library Dart
 class CuacaModel {
+  // Properti untuk data cuaca
   late int day;
   late String date;
   late String description;
@@ -9,6 +9,7 @@ class CuacaModel {
   late double temp;
   late double iconSize;
 
+  // Konstruktor untuk inisialisasi properti
   CuacaModel({
     required this.day,
     required this.date,
@@ -18,6 +19,8 @@ class CuacaModel {
     required this.temp,
     this.iconSize = 32.0,
   });
+
+  // Fungsi untuk mendapatkan nama hari berdasarkan nomor hari
   static String getDayName(int day) {
     switch (day) {
       case 1:
@@ -38,35 +41,14 @@ class CuacaModel {
         return 'Invalid Day';
     }
   }
+
+  // Fungsi untuk mengkapitalisasi setiap kata dalam sebuah string
   static String capitalizeEveryWord(String input) {
-  return input
-      .split(' ')
-      .map((word) => word.isNotEmpty ? '${word[0].toUpperCase()}${word.substring(1)}' : '')
-      .join(' ');
+    return input
+        .split(' ')
+        .map((word) => word.isNotEmpty
+            ? '${word[0].toUpperCase()}${word.substring(1)}'
+            : '')
+        .join(' ');
+  }
 }
-
-  
-}
-                
-/*                
-
-                
-
-                          
-
-{
-  
-  "weather": [
-    { 
-      "description": "moderate rain",
-      "icon": "10d"
-    }
-  ],
-  "main": {
-    "temp": 298.48,
-  },
-
-}                        
-
-           
-*/ 

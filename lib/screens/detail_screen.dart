@@ -1,12 +1,17 @@
+// Import library Flutter dan Flutter Services
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+// Import model berita
 import '/models/news.dart';
 
+// Kelas untuk tampilan halaman detail berita
 class DetailScreen extends StatelessWidget {
   final News news;
 
   const DetailScreen({Key? key, required this.news}) : super(key: key);
 
+  // Fungsi untuk menyalin teks ke clipboard
   void copyToClipboard(String text, BuildContext context) {
     Clipboard.setData(ClipboardData(text: text));
     ScaffoldMessenger.of(context).showSnackBar(
@@ -14,6 +19,7 @@ class DetailScreen extends StatelessWidget {
     );
   }
 
+  // Fungsi untuk memformat tanggal dari ISO date
   String _formatDate(String isoDate) {
     final parsedDate = DateTime.parse(isoDate);
     final formattedDate =
@@ -21,6 +27,7 @@ class DetailScreen extends StatelessWidget {
     return formattedDate;
   }
 
+  // Fungsi untuk memformat waktu dari ISO date
   String _formatTime(String isoDate) {
     final parsedDate = DateTime.parse(isoDate);
     final formattedTime = "${parsedDate.hour}:${parsedDate.minute}";
@@ -29,6 +36,7 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Menentukan layout berdasarkan lebar layar
     if (MediaQuery.of(context).size.width > 600) {
       return Scaffold(
         appBar: AppBar(
@@ -79,11 +87,13 @@ class DetailScreen extends StatelessWidget {
     }
   }
 
+  // Fungsi untuk membangun konten tampilan halaman detail
   Widget _buildContent() {
     return SingleChildScrollView(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          // Gambar berita dengan rasio aspek 16:9
           AspectRatio(
             aspectRatio: 16 / 9,
             child: Image.network(
@@ -97,6 +107,7 @@ class DetailScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const SizedBox(height: 8),
+                // Judul berita
                 Text(
                   news.title,
                   style: const TextStyle(
@@ -105,6 +116,7 @@ class DetailScreen extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 8),
+                // Tanggal dan waktu berita
                 Row(
                   children: [
                     Text(
@@ -125,6 +137,7 @@ class DetailScreen extends StatelessWidget {
                   ],
                 ),
                 const SizedBox(height: 16),
+                // Cuplikan isi berita
                 Text(
                   news.contentSnippet,
                   style: const TextStyle(fontSize: 18),

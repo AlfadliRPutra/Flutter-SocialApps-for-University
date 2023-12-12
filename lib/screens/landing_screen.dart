@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:src/models/color_scheme.dart';
 
 class LandingScreen extends StatelessWidget {
   @override
@@ -79,7 +79,7 @@ class LandingScreen extends StatelessWidget {
                       onPressed: () {
                         Get.toNamed('/signup'); // Use GetX to navigate
                       },
-                      color: Colors.yellow,
+                      color: AppTheme.primaryColor,
                       elevation: 0,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50),

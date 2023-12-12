@@ -1,9 +1,11 @@
+// Import library GetX dan file terkait
 import 'package:get/get.dart';
 import 'package:src/screens/landing_screen.dart';
 import 'package:src/screens/login_screen.dart';
 import 'package:src/screens/signup_screen.dart';
 import 'package:src/screens/home_screen.dart';
 
+// Daftar rute aplikasi menggunakan GetPage
 List<GetPage> appPages = [
   GetPage(
     name: '/landing',

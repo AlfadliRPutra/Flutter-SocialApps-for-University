@@ -11,13 +11,13 @@ class NewsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: EdgeInsets.only(
+      margin: const EdgeInsets.only(
         right: 10,
         left: 10,
         bottom: 5,
         top: 0,
       ),
-      color: Color.fromARGB(255, 255, 255, 255),
+      color: const Color.fromARGB(255, 255, 255, 255),
       child: InkWell(
         onTap: onTap,
         child: Row(

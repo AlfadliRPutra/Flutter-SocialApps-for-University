@@ -18,14 +18,14 @@ class HomeContent extends StatelessWidget {
           return Obx(() {
             if (controller.cuaca.value == null) {
               return Container(
-                padding: EdgeInsets.all(15),
+                padding: const EdgeInsets.all(15),
                 width: double.infinity,
-                margin: EdgeInsets.all(20),
+                margin: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Color(0xFF9BCDD2),
+                  color: const Color(0xFF9BCDD2),
                   borderRadius: BorderRadius.circular(20),
                 ),
-                child: Center(child: CircularProgressIndicator()),
+                child: const Center(child: CircularProgressIndicator()),
               );
             } else {
               return DisplayCuaca(cuaca: controller.cuaca.value!);

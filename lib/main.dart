@@ -13,7 +13,7 @@ void main() => runApp(const Unjatoday());
 
 // Kelas utama aplikasi yang merupakan StatelessWidget
 class Unjatoday extends StatelessWidget {
-  const Unjatoday({Key? key}) : super(key: key);
+  const Unjatoday({super.key});
 
   // Metode build untuk membuat tampilan aplikasi
   @override

@@ -15,14 +15,14 @@ class ProfileScreen extends StatelessWidget {
       body: Obx(() {
         if (controller.user.value.id.isEmpty) {
           // Menampilkan pesan Loading jika id pada UserModel kosong
-          return Center(
+          return const Center(
             child: Text('Loading...'),
           );
         } else {
           // Menampilkan data profil jika sudah dimuat
           return Center(
             child: Padding(
-              padding: EdgeInsets.only(top: 20),
+              padding: const EdgeInsets.only(top: 20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -31,20 +31,20 @@ class ProfileScreen extends StatelessWidget {
                     radius: 50,
                     backgroundImage: NetworkImage(controller.user.value.avatar),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                   // Menampilkan nama pengguna
                   Text(
                     controller.user.value.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  SizedBox(height: 3),
+                  const SizedBox(height: 3),
                   // Menampilkan email pengguna
                   Text(
                     controller.user.value.email,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                       color: Colors.grey,
                     ),

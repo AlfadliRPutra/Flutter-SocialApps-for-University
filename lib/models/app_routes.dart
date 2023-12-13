@@ -1,5 +1,6 @@
 // Import library GetX dan file terkait
 import 'package:get/get.dart';
+import 'package:src/screens/chat_detail.dart';
 import 'package:src/screens/landing_screen.dart';
 import 'package:src/screens/login_screen.dart';
 import 'package:src/screens/signup_screen.dart';
@@ -17,10 +18,14 @@ List<GetPage> appPages = [
   ),
   GetPage(
     name: '/signup',
-    page: () => SignupScreen(),
+    page: () => const SignupScreen(),
   ),
   GetPage(
     name: '/home',
     page: () => HomeScreen(),
+  ),
+  GetPage(
+    name: '/chatDetail',
+    page: () => ChatDetail(),
   ),
 ];

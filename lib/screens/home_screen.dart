@@ -28,10 +28,10 @@ class HomeScreen extends StatelessWidget {
         actions: [
           // Tombol notifikasi di sebelah kanan app bar
           IconButton(
-            padding: EdgeInsets.only(right: 10),
-            icon: Icon(
+            padding: const EdgeInsets.only(right: 10),
+            icon: const Icon(
               Icons.notifications,
-              color: const Color.fromARGB(255, 66, 66, 66),
+              color: Color.fromARGB(255, 66, 66, 66),
             ),
             onPressed: () {
               // Tangani ketika tombol notifikasi ditekan
@@ -41,10 +41,10 @@ class HomeScreen extends StatelessWidget {
         ],
         // Warna latar belakang dan judul app bar
         backgroundColor: AppTheme.primaryColor,
-        title: Text(
+        title: const Text(
           'UNJAtoday',
           style: TextStyle(
-            color: const Color.fromARGB(255, 66, 66, 66),
+            color: Color.fromARGB(255, 66, 66, 66),
             fontFamily: 'Open Sans',
             fontWeight: FontWeight.bold,
             fontSize: 20,
@@ -55,7 +55,7 @@ class HomeScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(
             Icons.menu,
-            color: const Color.fromARGB(255, 66, 66, 66),
+            color: Color.fromARGB(255, 66, 66, 66),
             semanticLabel: 'menu',
           ),
           onPressed: () {},
@@ -67,7 +67,7 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: ConvexAppBar(
         height: 50,
         // Item tab berisi ikon dan judul
-        items: [
+        items: const [
           TabItem(icon: Icons.home, title: 'Beranda'),
           TabItem(icon: Icons.search, title: 'Cari'),
           TabItem(icon: Icons.chat, title: 'Chat'),

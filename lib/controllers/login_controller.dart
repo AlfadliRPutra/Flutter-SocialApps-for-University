@@ -1,25 +1,25 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  final nimC = TextEditingController();
-  final passwordC = TextEditingController();
+  var email = ''.obs;
+  var password = ''.obs;
 
+  void setEmail(String value) {
+    email.value = value;
+  }
+
+  void setPassword(String value) {
+    password.value = value;
+  }
+  //function untuk login
   void login() {
-    final nim = nimC.text;
-    final password = passwordC.text;
-
-    // Check if the entered credentials match the test values
-    if (nim == 'admin' && password == 'adminpass') {
-      // If match, consider the user as logged in
-      print('Login successful!');
-
-      // Navigate to the HomeScreen
-      Get.offAllNamed(
-          '/home'); // Use the route name or replace it with the appropriate route
+    if (email.value == 'admin@gmail.com' && password.value == 'admin') {
+      Get.snackbar('Login Success', 'Welcome!',
+          snackPosition: SnackPosition.BOTTOM);
+      Get.offNamed('/home');
     } else {
-      // If not match, show an error message
-      print('Login failed. Invalid credentials.');
+      Get.snackbar('Login Failed', 'Invalid email or password',
+          snackPosition: SnackPosition.BOTTOM);
     }
   }
 }

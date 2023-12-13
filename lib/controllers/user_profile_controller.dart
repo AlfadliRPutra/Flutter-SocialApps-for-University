@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:get/get.dart';
+import 'package:logger/logger.dart';
 import '../models/user.dart';
 import 'package:http/http.dart' as http;
 
@@ -10,6 +11,8 @@ class ProfileController extends GetxController {
     id: '0',
     avatar: 'https://example.com/default-avatar.jpg',
   ).obs;
+
+  var logger = Logger();
 
   @override
   void onInit() {
@@ -30,11 +33,8 @@ class ProfileController extends GetxController {
         id: data['data']['id'].toString(),
         avatar: data['data']['avatar'].toString(),
       ));
-
-      print(
-          'User: ${user.value.name}, ${user.value.email}, ${user.value.id}, ${user.value.avatar}');
     } catch (e) {
-      print('Error fetching user data: $e');
+      logger.d('Error fetching user data: $e');
     }
   }
 }

@@ -13,7 +13,8 @@ class LoginController extends GetxController {
   }
   //function untuk login
   void login() {
-    if (email.value == 'admin@gmail.com' && password.value == 'admin') {
+    if (email.value == 'alfadli@unja.ac.id' && password.value == 'admin') {
+    // if (email.value == 'admin@gmail.com' && password.value == 'admin') {
       Get.snackbar('Login Success', 'Welcome!',
           snackPosition: SnackPosition.BOTTOM);
       Get.offNamed('/home');

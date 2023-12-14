@@ -10,31 +10,31 @@ class ChatScreen extends StatelessWidget {
     {
       'name': 'Nurrohman',
       'avatarUrl': 'https://example.com/avatar1.png',
-      'lastChat': 'Mang eak?',
+      'lastChat': 'Hi, Fadli. ga, bukannya hujan ya?',
       'time': '10:30 AM',
     },
     {
       'name': 'Regina',
       'avatarUrl': 'https://example.com/avatar2.png',
-      'lastChat': 'How are you?',
+      'lastChat': 'Apa kabar?',
       'time': '11:45 AM',
     },
     {
       'name': 'Nabil',
       'avatarUrl': 'https://example.com/avatar3.png',
-      'lastChat': 'Good morning!',
+      'lastChat': 'Selamat pagi',
       'time': '9:15 AM',
     },
     {
       'name': 'Shela',
       'avatarUrl': 'https://example.com/avatar4.png',
-      'lastChat': 'Hi!',
+      'lastChat': 'Hai!',
       'time': '2:20 PM',
     },
     {
       'name': 'Aounur',
       'avatarUrl': 'https://example.com/avatar5.png',
-      'lastChat': 'Hey!',
+      'lastChat': 'Hello!',
       'time': '4:55 PM',
     },
   ];

@@ -67,7 +67,7 @@ class LoginScreen extends StatelessWidget {
                     child: Column(
                       children: <Widget>[
                         makeInput(
-                          label: "Email",
+                          label: "Username",
                           onChanged: loginController.setEmail,
                         ),
                         makeInput(
@@ -166,7 +166,8 @@ class LoginScreen extends StatelessWidget {
           obscureText: obscureText,
           onChanged: onChanged,
           decoration: InputDecoration(
-            contentPadding: const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+            contentPadding:
+                const EdgeInsets.symmetric(vertical: 0, horizontal: 10),
             enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Colors.grey.shade400),
             ),

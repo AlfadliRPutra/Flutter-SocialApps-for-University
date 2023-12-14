@@ -44,7 +44,7 @@ class ChatDetail extends StatelessWidget {
         children: [
           Expanded(
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               decoration: BoxDecoration(
                 color: Colors.grey[200], // Set a background color
                 borderRadius:
@@ -52,14 +52,14 @@ class ChatDetail extends StatelessWidget {
               ),
               child: TextField(
                 controller: messageController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: 'Type your message...',
                   border: InputBorder.none, // Hide the default border
                 ),
               ),
             ),
           ),
-          SizedBox(width: 8.0),
+          const SizedBox(width: 8.0),
           ElevatedButton(
             onPressed: () {
               final message = messageController.text;
@@ -74,8 +74,8 @@ class ChatDetail extends StatelessWidget {
                     BorderRadius.circular(25.0), // Add rounded corners
               ),
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(top: 10, bottom: 10),
+            child: const Padding(
+              padding: EdgeInsets.only(top: 10, bottom: 10),
               child: Icon(Icons.send),
             ),
           ),
@@ -117,15 +117,15 @@ class ChatBubble extends StatelessWidget {
     return Align(
       alignment: isSentByMe ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-        padding: EdgeInsets.all(12.0),
+        margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+        padding: const EdgeInsets.all(12.0),
         decoration: BoxDecoration(
           color: isSentByMe ? AppTheme.secondaryColor : Colors.grey[300],
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(isSentByMe ? 20.0 : 0),
             topRight: Radius.circular(isSentByMe ? 0 : 20.0),
-            bottomLeft: Radius.circular(20.0),
-            bottomRight: Radius.circular(20.0),
+            bottomLeft: const Radius.circular(20.0),
+            bottomRight: const Radius.circular(20.0),
           ),
         ),
         child: Text(

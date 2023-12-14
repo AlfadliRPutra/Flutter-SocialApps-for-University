@@ -1,5 +1,6 @@
 // Import library untuk pengembangan UI dengan Flutter
 import 'package:flutter/material.dart';
+import 'package:src/controllers/user_controller.dart';
 
 // Import rute aplikasi dan skema warna kustom
 import 'package:src/models/app_routes.dart';
@@ -9,7 +10,11 @@ import 'package:src/models/color_scheme.dart';
 import 'package:get/get.dart';
 
 // Fungsi utama untuk menjalankan aplikasi
-void main() => runApp(const Unjatoday());
+void main() {
+  Get.put(UserController());
+  runApp(const Unjatoday());
+}
+
 
 // Kelas utama aplikasi yang merupakan StatelessWidget
 class Unjatoday extends StatelessWidget {

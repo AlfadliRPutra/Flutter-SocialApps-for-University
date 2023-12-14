@@ -18,46 +18,47 @@ class News {
 
 List<News> newsList = [
   News(
+    title: '\‘Batoku\’ Produk Kriya Ramah Lingkungan Karya Mahasiswa UNJA',
+    link:
+        'https://www.unja.ac.id/batoku-produk-kriya-ramah-lingkungan-karya-mahasiswa-unja/',
+    contentSnippet:
+        'Tim Program Mahasiswa Wirausaha (PMW) Universitas Jambi (UNJA) mendayagunaan Batok Kelapa menjadi seni kriya berbasis kearifan lokal ramah lingkungan di era modern hingga menjadi produk yang bernama \“Batoku Jambi\”.',
+    isoDate: '2023-12-14T03:16:51.000Z',
+    image: {
+      'small':
+          'https://www.unja.ac.id/wp-content/uploads/2023/12/WhatsApp-Image-2023-11-30-at-08.26.57-e1702452327336.jpeg',
+      'large':
+          'https://www.unja.ac.id/wp-content/uploads/2023/12/WhatsApp-Image-2023-11-30-at-08.26.57-e1702452327336.jpeg',
+    },
+  ),
+  News(
     title:
-        'Ahli Bongkar Misteri Kematian Massal Paus Abu-abu, Manusia Aktor Utama',
+        'Tim Mahasiswa FH UNJA, Raih Juara 1 Best Essay dan Penghargaan Best Group of FGD dalam Ajang Semar Law Fair 2023 di UNS Solo',
     link:
-        'https://www.cnnindonesia.com/teknologi/20231020143304-199-1013844/ahli-bongkar-misteri-kematian-massal-paus-abu-abu-manusia-aktor-utama',
+        'https://www.unja.ac.id/tim-mahasiswa-fh-unja-raih-juara-1-best-essay-dan-penghargaan-best-group-of-fgd-dalam-ajang-smart-law-fair-di-uns-solo/',
     contentSnippet:
-        'Pakar akhirnya berhasil mengungkap penyebab serangkaian kematian massal paus abu-abu di Samudera Pasifik.',
-    isoDate: '2023-10-21T03:16:51.000Z',
+        'Tim mahasiwa Fakultas Hukum (FH) Universitas Jambi (UNJA) berhasil meraih prestasi dalam Forum Mahasiswa Hukum Indonesia Tahun 2023 pada Ajang “Semar Law Fair Mahasiswa Fakultas Hukum” yang diselenggarakan oleh Universitas Sebelas Maret (UNS) SOLO kegiatan berlangsung di Surakarta, Hotel Lorin, 7-12 Desember 2023.',
+    isoDate: '2023-12-14T02:16:01.000Z',
     image: {
       'small':
-          'https://akcdn.detik.net.id/visual/2021/04/03/saat-paus-abu-abu-kembali-sapa-turis-di-meksiko-8_169.jpeg?w=360&q=90',
+          'https://www.unja.ac.id/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-13-at-08.28.44-scaled-e1702431292475.jpeg',
       'large':
-          'https://akcdn.detik.net.id/visual/2021/04/03/saat-paus-abu-abu-kembali-sapa-turis-di-meksiko-8_169.jpeg?w=360&q=100',
+          'https://www.unja.ac.id/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-13-at-08.28.44-scaled-e1702431292475.jpeg',
     },
   ),
   News(
-    title: 'Mengenal Satelit HBS, Proyek Diakhiri Sebelum Mengangkasa',
+    title:
+        'Cerita PMM 3 UNJA di Univeristas Mataram, Jelajahi 1001 Keindahan Alam di NTB',
     link:
-        'https://www.cnnindonesia.com/teknologi/20231021082928-213-1014118/mengenal-satelit-hbs-proyek-diakhiri-sebelum-mengangkasa',
+        'https://www.unja.ac.id/cerita-pmm-3-unja-di-univeristas-mataram-jelajahi-1001-keindahan-alam-di-ntb/',
     contentSnippet:
-        'Proyek satelit senilai Rp5,2 triliun, Sateli HBS, diakhiri sebelum diluncurkan ke angkasa. Berikut paparan soal satelit ini.',
-    isoDate: '2023-10-21T02:16:01.000Z',
+        'Universitas Jambi (UNJA) secara serentak melakukan monitoring dan evaluasi Pertukaran Mahasiswa Merdeka (PMM) 3 ke 78 Perguruan Tinggi penerima yang tersebar diseluruh Indonesia, pada Senin, 27 November 2023.',
+    isoDate: '2023-12-20T01:16:14.000Z',
     image: {
       'small':
-          'https://akcdn.detik.net.id/visual/2017/10/05/5d1fbd45-2418-4a93-b971-07d6b9237c96_169.jpg?w=360&q=90',
+          'https://www.unja.ac.id/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-12-at-16.09.27-e1702372626121.jpeg',
       'large':
-          'https://akcdn.detik.net.id/visual/2017/10/05/5d1fbd45-2418-4a93-b971-07d6b9237c96_169.jpg?w=360&q=100',
-    },
-  ),
-  News(
-    title: 'Lautan di Bawah Tanah Ditemukan, Pakar Ungkap Sebab Terbentuknya',
-    link:
-        'https://www.cnnindonesia.com/teknologi/20231019164657-199-1013504/lautan-di-bawah-tanah-ditemukan-pakar-ungkap-sebab-terbentuknya',
-    contentSnippet:
-        'Pakar menemukan sebuah waduk air bawah laut di Samudera Pasifik di sekitar lepas pantai Selandia Baru. Cek penyebabnya.',
-    isoDate: '2023-10-21T01:16:14.000Z',
-    image: {
-      'small':
-          'https://akcdn.detik.net.id/visual/2023/10/19/instrumen-pencitraan-seismik-dari-utig_169.png?w=360&q=90',
-      'large':
-          'https://akcdn.detik.net.id/visual/2023/10/19/instrumen-pencitraan-seismik-dari-utig_169.png?w=360&q=100',
+          'https://www.unja.ac.id/wp-content/uploads/2023/12/WhatsApp-Image-2023-12-12-at-16.09.27-e1702372626121.jpeg',
     },
   ),
   News(

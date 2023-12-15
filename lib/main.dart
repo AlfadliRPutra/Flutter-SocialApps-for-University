@@ -15,7 +15,6 @@ void main() {
   runApp(const Unjatoday());
 }
 
-
 // Kelas utama aplikasi yang merupakan StatelessWidget
 class Unjatoday extends StatelessWidget {
   const Unjatoday({super.key});

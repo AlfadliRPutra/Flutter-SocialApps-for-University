@@ -4,8 +4,10 @@ import 'package:src/models/color_scheme.dart';
 import 'package:src/controllers/user_controller.dart'; // Menggunakan UserController
 
 class ProfileScreen extends StatelessWidget {
-  final UserController userController =
-      Get.find(); // Menggunakan UserController
+  // Inside any other screen where you need user data
+  var userController = Get.find<UserController>();
+
+// Access user data
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,9 @@ class ProfileScreen extends StatelessWidget {
           if (userController.isLoggedIn.value &&
               userController.username.value.isNotEmpty &&
               userController.fullName.value.isNotEmpty) {
+            print('Username: ${userController.username.value}');
+            print('Username: ${userController.isLoggedIn.value}');
+            print('Full Name: ${userController.fullName.value}');
             return Center(
               child: Padding(
                 padding:
@@ -39,7 +44,8 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 20),
                           Text(
-                            userController.fullName.value,
+                            // userController.fullName.value,
+                            'Alfadli Rahmat Putra',
                             style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,
@@ -47,7 +53,8 @@ class ProfileScreen extends StatelessWidget {
                           ),
                           const SizedBox(height: 3),
                           Text(
-                            userController.username.value,
+                            // userController.username.value,
+                            'Alfadli17',
                             style: TextStyle(
                               fontSize: 16,
                               color: Colors.grey,

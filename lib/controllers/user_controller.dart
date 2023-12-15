@@ -26,5 +26,7 @@ class UserController extends GetxController {
     fullName.value = '';
     password.value = '';
     avatar.value = '';
+
+    Get.offAllNamed('/landing');
   }
 }

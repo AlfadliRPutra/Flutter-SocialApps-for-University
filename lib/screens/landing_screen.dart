@@ -24,16 +24,16 @@ class LandingScreen extends StatelessWidget {
               Column(
                 children: <Widget>[
                   const Text(
-                    "Welcome",
+                    "Selamat Datang",
                     style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                   ),
                   const SizedBox(
                     height: 20,
                   ),
                   Text(
-                    "Selamat datang di UNJAtoday",
+                    "UNJAtoday",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.grey[700], fontSize: 15),
+                    style: TextStyle(color: Colors.grey[700], fontSize: 20),
                   ),
                 ],
               ),
@@ -88,7 +88,8 @@ class LandingScreen extends StatelessWidget {
                       minWidth: double.infinity,
                       height: 60,
                       onPressed: () {
-                        Get.toNamed('/signup'); // Menggunakan GetX untuk navigasi
+                        Get.toNamed(
+                            '/signup'); // Menggunakan GetX untuk navigasi
                       },
                       // Mengatur warna dan bentuk tombol
                       color: AppTheme.primaryColor,

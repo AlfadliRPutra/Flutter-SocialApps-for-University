@@ -4,12 +4,14 @@ import 'package:get/get.dart';
 
 // Import controller login dan skema warna aplikasi
 import 'package:src/controllers/login_controller.dart';
+import 'package:src/controllers/user_controller.dart';
 import 'package:src/models/color_scheme.dart';
 
 // Kelas untuk tampilan halaman login
 class LoginScreen extends StatelessWidget {
   // Membuat instance dari LoginController menggunakan GetX
   final LoginController loginController = Get.put(LoginController());
+  final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {

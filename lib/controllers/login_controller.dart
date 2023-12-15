@@ -44,7 +44,8 @@ class LoginController extends GetxController {
 
           Get.snackbar('Login Berhasil', 'Selamat!',
               snackPosition: SnackPosition.BOTTOM);
-          Get.offNamed('/home');
+          Get.offAllNamed('/home');
+          
         } else {
           Get.snackbar('Login Gagal', result['message'],
               snackPosition: SnackPosition.BOTTOM);

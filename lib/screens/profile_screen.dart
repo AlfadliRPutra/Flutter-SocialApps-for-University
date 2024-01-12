@@ -39,7 +39,6 @@ class ProfileScreen extends StatelessWidget {
                           const CircleAvatar(
                             radius: 50,
                             // Ganti dengan URL atau path ke avatar pengguna
-
                             backgroundImage: AssetImage('data/alfadli.jpeg'),
                           ),
                           const SizedBox(height: 20),
@@ -62,6 +61,64 @@ class ProfileScreen extends StatelessWidget {
                           ),
                         ],
                       ),
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Container(
+                          width: 120,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.people, color: Colors.white),
+                              const SizedBox(height: 5),
+                              Text(
+                                'Daftar Teman',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          width: 120,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: Colors.deepOrange,
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Icon(Icons.book, color: Colors.white),
+                              const SizedBox(height: 5),
+                              Text(
+                                'Jumlah Bacaan',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                '123',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
                     ),
                     const SizedBox(height: 20),
                     ListTile(
@@ -105,7 +162,7 @@ class ProfileScreen extends StatelessWidget {
                       title: const Text('Logout'),
                       onTap: () {
                         // Show a confirmation dialog before logging out
-                        userController.logout();
+                        _showLogoutConfirmationDialog();
                       },
                     ),
                   ],
@@ -119,6 +176,20 @@ class ProfileScreen extends StatelessWidget {
           }
         }),
       ),
+    );
+  }
+
+  void _showLogoutConfirmationDialog() {
+    Get.defaultDialog(
+      title: 'Logout',
+      middleText: 'Apakah anda yakin?',
+      textCancel: 'Batal',
+      onCancel: () {},
+      textConfirm: 'Lanjutkan',
+      onConfirm: () {
+        // Perform logout action
+        Get.offAllNamed('/landing');
+      },
     );
   }
 }

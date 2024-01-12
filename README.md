@@ -1,16 +1,29 @@
-# NewsAPP
+# CampuzToday Mobile App
 
-This project is made for the subject of Mobile Application Development
+CampuzToday adalah aplikasi mobile yang dibangun dengan menggunakan Flutter. Aplikasi ini dirancang khusus untuk membantu pengguna, terutama mahasiswa, mendapatkan informasi terkini seputar kehidupan kampus.
 
-## Getting Started
+## Fitur Utama
 
-This project is a starting point for a Flutter application.
+1. **News Kampus**
 
-A few resources to get you started if this is your first Flutter project:
+   - Dapatkan berita terbaru seputar kegiatan dan peristiwa di kampus.
+   - Baca artikel-artikel menarik dan informatif mengenai dunia kampus.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. **Chat**
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+   - Terhubung dengan sesama mahasiswa atau staf kampus melalui fitur obrolan.
+   - Mudah berkomunikasi dan berbagi informasi dengan teman-teman di kampus.
+
+3. **Pengumuman Academic**
+   - Terima pengumuman akademis secara langsung.
+   - Pantau jadwal kuliah, informasi ujian, dan perubahan lainnya melalui bagian ini.
+
+## Kontribusi
+
+Jika Anda ingin berkontribusi pada pengembangan CampuzToday, silakan buat _pull request_ dan ikuti pedoman kontribusi yang ada.
+
+## Hubungi Saya
+
+Jika Anda memiliki pertanyaan atau saran, silakan hubungi saya melalui [alfadlirputra@gmail.com](mailto:alfadlirputra.com).
+
+Terima kasih!

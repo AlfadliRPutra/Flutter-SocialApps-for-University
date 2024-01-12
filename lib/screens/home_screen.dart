@@ -8,6 +8,7 @@ import 'package:src/models/color_scheme.dart';
 
 // Import widget bottom navigation bar dari ConvexAppBar
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
+import 'package:src/screens/notification_screen.dart';
 
 // Kelas untuk tampilan halaman utama (home)
 class HomeScreen extends StatelessWidget {
@@ -34,8 +35,7 @@ class HomeScreen extends StatelessWidget {
               color: Color.fromARGB(255, 66, 66, 66),
             ),
             onPressed: () {
-              // Tangani ketika tombol notifikasi ditekan
-              // Anda dapat melakukan navigasi ke halaman notifikasi atau menampilkan panel notifikasi
+              Get.to(() => NotificationScreen());
             },
           ),
         ],

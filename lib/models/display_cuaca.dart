@@ -1,6 +1,7 @@
 // WeatherDisplay.dart
 
 import 'package:flutter/material.dart';
+import 'package:src/models/color_scheme.dart';
 import '/models/cuaca.dart'; // Make sure to import the correct path
 
 class DisplayCuaca extends StatelessWidget {
@@ -15,7 +16,7 @@ class DisplayCuaca extends StatelessWidget {
       width: double.infinity,
       margin: const EdgeInsets.all(20),
       decoration: BoxDecoration(
-        color: const Color(0xFF9BCDD2),
+        color: AppTheme.tertiaryColor,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Row(
@@ -31,7 +32,8 @@ class DisplayCuaca extends StatelessWidget {
               ),
               Text(
                 CuacaModel.getDayName(cuaca.day),
-                style: const TextStyle(fontSize: 21.0, fontWeight: FontWeight.bold),
+                style: const TextStyle(
+                    fontSize: 21.0, fontWeight: FontWeight.bold),
               ),
               Text(cuaca.date, style: const TextStyle(fontSize: 12.0)),
               Text(cuaca.time, style: const TextStyle(fontSize: 12.0)),
